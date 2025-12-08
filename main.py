@@ -1,5 +1,5 @@
-from trainer import Trainer
-from rosetta import Rosetta
+from classes.trainer import Trainer
+from classes.rosetta import Rosetta
 
 CORPUS_FILEPATH = "./res/text/corpus.txt"
 
