@@ -1,5 +1,6 @@
-res
-*.txt
+res/text/*.txt
+*.json
+*.pt
 .venv
 .idea
-__pycache__
+utils/__pycache__/*
