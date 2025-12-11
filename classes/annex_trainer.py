@@ -1,5 +1,7 @@
 # classes/annex_trainer.py
 
+import winsound
+
 from utils import *
 
 
@@ -25,6 +27,7 @@ class AnnexTrainer:
                     f"train {losses['train']:.3f}, "
                     f"val {losses['val']:.3f}"
                 )
+                winsound.Beep(500, 250)
 
             x, y = get_batch("train", self.train_data, self.val_data)
             logits, _ = self.model(x)
@@ -37,6 +40,7 @@ class AnnexTrainer:
             loss.backward()
             torch.nn.utils.clip_grad_norm_(self.model.parameters(), max_norm=1.0)
             self.optimizer.step()
+
         torch.save(self.model.state_dict(), MODEL_PATH)
 
     def generate(self, tokenizer: AnnexTokenizer, start_text: str = "Once upon a time") -> str:

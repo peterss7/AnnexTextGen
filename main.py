@@ -1,5 +1,6 @@
 # main.py
 import json
+import winsound
 
 from classes.annex_trainer import AnnexTrainer
 from utils import *
@@ -32,6 +33,7 @@ def main():
     with open(SAMPLE_HISTORY_FILEPATH, "w", encoding="utf-8") as file:
         json.dump(history, file, indent=4)
 
+    winsound.Beep(1000, 250)
 
 if __name__ == "__main__":
     main()
